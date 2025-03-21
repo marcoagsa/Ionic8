@@ -1,4 +1,4 @@
-import { Component, VERSION } from '@angular/core';
+import { Component, VERSION, input, booleanAttribute } from '@angular/core';
 import {
   IonBackButton,
   IonHeader,
@@ -13,7 +13,9 @@ import IonicInfo from '@ionic/angular/package.json';
   imports: [IonHeader, IonToolbar, IonBackButton, IonTitle],
   template: `<ion-header>
     <ion-toolbar>
+      @if (showBackButton()) {
       <ion-back-button slot="start" />
+      }
       <ion-title> {{ name }} </ion-title>
     </ion-toolbar>
   </ion-header>`,
@@ -24,5 +26,5 @@ import IonicInfo from '@ionic/angular/package.json';
 })
 export class HeaderComponent {
   name: string = `Ionic ${IonicInfo.version} and Angular ${VERSION.full}`;
-  constructor() {}
+  showBackButton = input(false, { transform: booleanAttribute });
 }

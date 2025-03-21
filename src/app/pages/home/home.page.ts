@@ -32,5 +32,5 @@ import { InfoCardComponent } from '@components/info-card/info-card.component';
   styles: ``,
 })
 export class HomePage {
-  id = signal('tes');
+  id = signal('test sending data to page two');
 }

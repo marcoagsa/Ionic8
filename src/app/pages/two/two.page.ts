@@ -5,9 +5,9 @@ import { HeaderComponent } from 'src/app/components/header/header.component';
 @Component({
   selector: 'app-two',
   template: `
-    <app-header />
+    <app-header showBackButton />
 
-    <ion-content>
+    <ion-content class="ion-padding">
       <ion-text color="danger">
         <h1>{{ id() }}</h1>
       </ion-text>
